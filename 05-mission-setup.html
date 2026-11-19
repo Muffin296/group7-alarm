@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Alarm G7">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="theme-color" content="#4765D9">
+  <link rel="apple-touch-icon" href="pwa/apple-touch-icon.png">
+  <link rel="manifest" href="pwa/manifest.json">
+  <title>05 Mission Setup</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="missionSetup">
+  <div class="top">
+    <a class="back" id="back-link" href="04-dismiss-mode.html" aria-label="Back">&lsaquo;</a>
+    <h1>Wake-up mission</h1>
+  </div>
+  <p class="subtitle">Make yourself leave the bedroom</p>
+
+  <form id="mission-form" novalidate>
+    <div class="tabs">
+      <label><input type="radio" name="type" value="QR code" checked> QR code</label>
+      <label><input type="radio" name="type" value="Photo"> Photo</label>
+    </div>
+
+    <p class="label">Register a target</p>
+    <div class="qr-box">
+      <div class="qr-icon" id="target-icon">&#9638;</div>
+      <p id="target-title">Scan or upload your QR</p>
+      <img class="preview hidden" id="mission-preview" alt="Chosen target">
+      <input id="mission-file" type="file" accept="image/*" aria-label="Target image">
+      <p class="muted" id="target-status"></p>
+    </div>
+
+    <div class="box box-green">
+      <label class="label" for="mission-location">Target location</label>
+      <input id="mission-location" type="text" maxlength="40" placeholder="e.g. Bathroom door">
+    </div>
+
+    <p class="light">Tip: Keep the target in another room.</p>
+
+    <p class="box box-red hidden" id="form-error" role="alert"></p>
+
+    <button class="btn" type="submit">Save wake-up mission</button>
+  </form>
+
+  <script src="scripts/api.js"></script>
+  <script src="scripts/common.js"></script>
+  <script src="scripts/app.js"></script>
+</body>
+</html>

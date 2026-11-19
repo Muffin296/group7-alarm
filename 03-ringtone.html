@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Alarm G7">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="theme-color" content="#4765D9">
+  <link rel="apple-touch-icon" href="pwa/apple-touch-icon.png">
+  <link rel="manifest" href="pwa/manifest.json">
+  <title>03 Pick Ringtone</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="ringtone">
+  <div class="top">
+    <a class="back" id="back-link" href="02-alarm-editor.html" aria-label="Back">&lsaquo;</a>
+    <h1>Ringtone</h1>
+  </div>
+  <p class="subtitle">Choose the sound for this alarm</p>
+
+  <form id="ringtone-form">
+    <!-- filled by app.js with GET /ringtone -->
+    <div id="ringtone-list">
+      <p class="muted empty">Loading sounds...</p>
+    </div>
+
+    <p class="box box-red hidden" id="form-error" role="alert"></p>
+
+    <button class="btn" type="submit">Use selected sound</button>
+  </form>
+
+  <script src="scripts/api.js"></script>
+  <script src="scripts/common.js"></script>
+  <script src="scripts/app.js"></script>
+</body>
+</html>

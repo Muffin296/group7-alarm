@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Alarm G7">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="theme-color" content="#4765D9">
+  <link rel="apple-touch-icon" href="pwa/apple-touch-icon.png">
+  <link rel="manifest" href="pwa/manifest.json">
+  <title>12 Alarm Dismissed</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="alarmDismissed">
+  <h1>Alarm complete</h1>
+
+  <div class="center">
+    <div class="circle circle-green"><span class="check">&#10003;</span></div>
+    <h2 class="awake">You&#39;re awake!</h2>
+    <p class="muted" id="dismissed-time">Alarm dismissed</p>
+  </div>
+
+  <div class="card card-block">
+    <p class="label green">Completed</p>
+    <p><b id="dismissed-challenge">Wake-up challenge</b></p>
+  </div>
+
+  <form action="01-alarm-list.html">
+    <button class="btn" type="submit">Back to my alarms</button>
+  </form>
+
+  <script src="scripts/api.js"></script>
+  <script src="scripts/common.js"></script>
+  <script src="scripts/app.js"></script>
+</body>
+</html>

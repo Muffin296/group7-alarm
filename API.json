@@ -1,0 +1,432 @@
+{
+  "data-sample": {
+    "alarm": {
+      "id": 1,
+      "time": "06:30",
+      "period": "AM",
+      "label": "Gym morning",
+      "repeat": [
+        "Mon",
+        "Tue",
+        "Wed",
+        "Thu",
+        "Fri"
+      ],
+      "enabled": true,
+      "ringtone": {
+        "id": 1,
+        "name": "Soft Rise",
+        "type": "Gentle",
+        "duration": "00:24"
+      },
+      "dismiss_mode": {
+        "id": 2,
+        "name": "Math challenge",
+        "description": "Solve a short puzzle",
+        "level": 2
+      },
+      "mission": {
+        "id": 1,
+        "type": "QR code",
+        "target_location": "Bathroom door",
+        "qr_code": "BATHROOM-DOOR"
+      }
+    },
+    "challenge": {
+      "id": 101,
+      "alarm_id": 1,
+      "type": "math",
+      "target": "27 + 16 = ?",
+      "user_input": "41",
+      "completed": false
+    },
+    "dismissal": {
+      "id": 1,
+      "alarm_id": 1,
+      "dismissed_at": "2026-11-18T06:32:00Z",
+      "challenge": "Wake-up challenge"
+    }
+  },
+  "schema": [
+    {
+      "name": "alarm",
+      "attributes": [
+        {
+          "name": "id",
+          "type": "int"
+        },
+        {
+          "name": "time",
+          "type": "datetime"
+        },
+        {
+          "name": "period",
+          "type": "datetime"
+        },
+        {
+          "name": "label",
+          "type": "datetime"
+        },
+        {
+          "name": "repeat",
+          "type": "datetime[]"
+        },
+        {
+          "name": "enabled",
+          "type": "bool"
+        },
+        {
+          "name": "ringtone",
+          "type": "ringtone"
+        },
+        {
+          "name": "dismiss_mode",
+          "type": "dismiss_mode"
+        },
+        {
+          "name": "mission",
+          "type": "mission"
+        }
+      ]
+    },
+    {
+      "name": "ringtone",
+      "attributes": [
+        {
+          "name": "id",
+          "type": "int"
+        },
+        {
+          "name": "name",
+          "type": "datetime"
+        },
+        {
+          "name": "type",
+          "type": "datetime"
+        },
+        {
+          "name": "duration",
+          "type": "datetime"
+        }
+      ]
+    },
+    {
+      "name": "dismiss_mode",
+      "attributes": [
+        {
+          "name": "id",
+          "type": "int"
+        },
+        {
+          "name": "name",
+          "type": "datetime"
+        },
+        {
+          "name": "description",
+          "type": "datetime"
+        },
+        {
+          "name": "level",
+          "type": "int"
+        }
+      ]
+    },
+    {
+      "name": "mission",
+      "attributes": [
+        {
+          "name": "id",
+          "type": "int"
+        },
+        {
+          "name": "type",
+          "type": "datetime"
+        },
+        {
+          "name": "target_location",
+          "type": "datetime"
+        },
+        {
+          "name": "qr_code",
+          "type": "datetime"
+        },
+        {
+          "name": "photo_hash",
+          "type": "datetime"
+        },
+        {
+          "name": "photo_preview",
+          "type": "datetime"
+        }
+      ]
+    },
+    {
+      "name": "challenge",
+      "attributes": [
+        {
+          "name": "id",
+          "type": "int"
+        },
+        {
+          "name": "alarm_id",
+          "type": "int"
+        },
+        {
+          "name": "type",
+          "type": "datetime"
+        },
+        {
+          "name": "target",
+          "type": "datetime"
+        },
+        {
+          "name": "user_input",
+          "type": "datetime"
+        },
+        {
+          "name": "completed",
+          "type": "bool"
+        }
+      ]
+    },
+    {
+      "name": "dismissal",
+      "attributes": [
+        {
+          "name": "id",
+          "type": "int"
+        },
+        {
+          "name": "alarm_id",
+          "type": "int"
+        },
+        {
+          "name": "dismissed_at",
+          "type": "datetime"
+        },
+        {
+          "name": "challenge",
+          "type": "datetime"
+        }
+      ]
+    }
+  ],
+  "API": {
+    "/alarm": {
+      "verbs": "POST, GET, PUT, DELETE",
+      "description": "Get, create, update or delete an alarm (time, label, repeat, on/off, ringtone, dismiss mode)"
+    },
+    "/ringtone": {
+      "verbs": "GET",
+      "description": "Get the list of ringtones"
+    },
+    "/dismiss_mode": {
+      "verbs": "GET",
+      "description": "Get the list of dismiss modes"
+    },
+    "/mission": {
+      "verbs": "POST, GET, PUT",
+      "description": "Get, create or update the wake-up mission target (QR code or photo)"
+    },
+    "/challenge": {
+      "verbs": "POST, GET, PUT",
+      "description": "Create a challenge when the alarm rings, get it, or send the user's answer (math, shake, QR, photo)"
+    },
+    "/dismissal": {
+      "verbs": "POST, GET",
+      "description": "Save or get the time when the alarm was dismissed"
+    }
+  },
+  "database": {
+    "alarm": [
+      {
+        "id": 1,
+        "time": "06:30",
+        "period": "AM",
+        "label": "Gym morning",
+        "repeat": [
+          "Mon",
+          "Tue",
+          "Wed",
+          "Thu",
+          "Fri"
+        ],
+        "enabled": true,
+        "ringtone": {
+          "id": 1,
+          "name": "Soft Rise",
+          "type": "Gentle",
+          "duration": "00:24"
+        },
+        "dismiss_mode": {
+          "id": 2,
+          "name": "Math challenge",
+          "description": "Solve a short puzzle",
+          "level": 2
+        },
+        "mission": {
+          "id": 1,
+          "type": "QR code",
+          "target_location": "Bathroom door",
+          "qr_code": "BATHROOM-DOOR",
+          "photo_hash": null,
+          "photo_preview": null
+        }
+      },
+      {
+        "id": 2,
+        "time": "07:15",
+        "period": "AM",
+        "label": "Class",
+        "repeat": [
+          "Mon",
+          "Tue",
+          "Wed",
+          "Thu",
+          "Fri",
+          "Sat",
+          "Sun"
+        ],
+        "enabled": true,
+        "ringtone": {
+          "id": 2,
+          "name": "Classic Bell",
+          "type": "Bright",
+          "duration": "00:17"
+        },
+        "dismiss_mode": {
+          "id": 3,
+          "name": "Shake phone",
+          "description": "Complete a shake target",
+          "level": 2
+        },
+        "mission": null
+      },
+      {
+        "id": 3,
+        "time": "08:00",
+        "period": "AM",
+        "label": "Study",
+        "repeat": [
+          "Sat",
+          "Sun"
+        ],
+        "enabled": false,
+        "ringtone": {
+          "id": 4,
+          "name": "Morning Birds",
+          "type": "Nature",
+          "duration": "00:33"
+        },
+        "dismiss_mode": {
+          "id": 4,
+          "name": "Wake-up mission",
+          "description": "QR scan or matching photo",
+          "level": 3
+        },
+        "mission": {
+          "id": 2,
+          "type": "Photo",
+          "target_location": "Bathroom sink",
+          "qr_code": null,
+          "photo_hash": null,
+          "photo_preview": null
+        }
+      }
+    ],
+    "ringtone": [
+      {
+        "id": 1,
+        "name": "Soft Rise",
+        "type": "Gentle",
+        "duration": "00:24"
+      },
+      {
+        "id": 2,
+        "name": "Classic Bell",
+        "type": "Bright",
+        "duration": "00:17"
+      },
+      {
+        "id": 3,
+        "name": "Digital Pulse",
+        "type": "Electronic",
+        "duration": "00:20"
+      },
+      {
+        "id": 4,
+        "name": "Morning Birds",
+        "type": "Nature",
+        "duration": "00:33"
+      },
+      {
+        "id": 5,
+        "name": "Chime",
+        "type": "Minimal",
+        "duration": "00:14"
+      }
+    ],
+    "dismiss_mode": [
+      {
+        "id": 1,
+        "name": "Normal",
+        "description": "Tap to dismiss",
+        "level": 1
+      },
+      {
+        "id": 2,
+        "name": "Math challenge",
+        "description": "Solve a short puzzle",
+        "level": 2
+      },
+      {
+        "id": 3,
+        "name": "Shake phone",
+        "description": "Complete a shake target",
+        "level": 2
+      },
+      {
+        "id": 4,
+        "name": "Wake-up mission",
+        "description": "QR scan or matching photo",
+        "level": 3
+      }
+    ],
+    "mission": [
+      {
+        "id": 1,
+        "type": "QR code",
+        "target_location": "Bathroom door",
+        "qr_code": "BATHROOM-DOOR",
+        "photo_hash": null,
+        "photo_preview": null
+      },
+      {
+        "id": 2,
+        "type": "Photo",
+        "target_location": "Bathroom sink",
+        "qr_code": null,
+        "photo_hash": null,
+        "photo_preview": null
+      }
+    ],
+    "challenge": [
+      {
+        "id": 101,
+        "alarm_id": 1,
+        "type": "math",
+        "target": "27 + 16 = ?",
+        "user_input": "41",
+        "completed": false
+      }
+    ],
+    "dismissal": [
+      {
+        "id": 1,
+        "alarm_id": 1,
+        "dismissed_at": "2026-11-18T06:32:00+07:00",
+        "challenge": "Wake-up challenge"
+      }
+    ]
+  }
+}

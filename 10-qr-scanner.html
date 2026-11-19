@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Alarm G7">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="theme-color" content="#4765D9">
+  <link rel="apple-touch-icon" href="pwa/apple-touch-icon.png">
+  <link rel="manifest" href="pwa/manifest.json">
+  <title>10 QR Scanner</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="qrScanner">
+  <div class="top">
+    <a class="back" id="back-link" href="06-alarm-ringing.html" aria-label="Back">&lsaquo;</a>
+    <h1>Scan QR code</h1>
+  </div>
+  <p class="subtitle">Go to the registered location</p>
+
+  <div class="camera" id="camera"><p>[ Camera ] Starting...</p></div>
+
+  <div class="box box-blue">
+    <p class="label">Target</p>
+    <p><b id="qr-target">-</b></p>
+  </div>
+
+  <!-- when the right QR code is scanned the app goes to screen 12 -->
+  <p class="center muted" id="qr-help">Hold the QR code inside the frame</p>
+
+  <form id="qr-form" novalidate>
+    <label class="label" for="qr-input">No camera? Type the code under the QR</label>
+    <input id="qr-input" type="text" autocomplete="off" placeholder="e.g. BATHROOM-DOOR">
+    <p class="box box-red hidden" id="form-error" role="alert"></p>
+    <button class="btn" type="submit">Check code</button>
+  </form>
+
+  <script src="scripts/api.js"></script>
+  <script src="scripts/common.js"></script>
+  <script src="scripts/app.js"></script>
+</body>
+</html>

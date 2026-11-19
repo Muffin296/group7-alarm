@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Alarm G7">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="theme-color" content="#4765D9">
+  <link rel="apple-touch-icon" href="pwa/apple-touch-icon.png">
+  <link rel="manifest" href="pwa/manifest.json">
+  <title>02 Alarm Editor</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="alarmEditor">
+  <div class="top">
+    <a class="back" id="back-link" href="01-alarm-list.html" aria-label="Back">&lsaquo;</a>
+    <h1 id="editor-title">Edit alarm</h1>
+    <a class="delete hidden" id="delete-link" href="01-alarm-list.html">Delete</a>
+  </div>
+
+  <form id="alarm-form" novalidate>
+    <label class="label" for="alarm-time">Alarm time</label>
+    <input class="big-time" id="alarm-time" type="time" required>
+
+    <label class="label" for="alarm-label">Label</label>
+    <input id="alarm-label" type="text" maxlength="30" placeholder="e.g. Gym morning">
+
+    <p class="label">Repeat</p>
+    <div class="days">
+      <label><input type="checkbox" name="repeat" value="Mon"> Mon</label>
+      <label><input type="checkbox" name="repeat" value="Tue"> Tue</label>
+      <label><input type="checkbox" name="repeat" value="Wed"> Wed</label>
+      <label><input type="checkbox" name="repeat" value="Thu"> Thu</label>
+      <label><input type="checkbox" name="repeat" value="Fri"> Fri</label>
+      <label><input type="checkbox" name="repeat" value="Sat"> Sat</label>
+      <label><input type="checkbox" name="repeat" value="Sun"> Sun</label>
+    </div>
+
+    <p class="label">Ringtone</p>
+    <a class="row-link" id="ringtone-link" href="03-ringtone.html"><span id="ringtone-name">Soft Rise</span> <span>&rsaquo;</span></a>
+
+    <p class="label">Dismiss mode</p>
+    <a class="small-link" id="dismiss-link" href="04-dismiss-mode.html"><span id="dismiss-name">Math challenge</span> &rsaquo;</a>
+
+    <p class="box box-red hidden" id="form-error" role="alert"></p>
+
+    <button class="btn" type="submit">Save alarm</button>
+  </form>
+
+  <script src="scripts/api.js"></script>
+  <script src="scripts/common.js"></script>
+  <script src="scripts/app.js"></script>
+</body>
+</html>

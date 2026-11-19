@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Alarm G7">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="theme-color" content="#4765D9">
+  <link rel="apple-touch-icon" href="pwa/apple-touch-icon.png">
+  <link rel="manifest" href="pwa/manifest.json">
+  <title>08 Math Wrong Answer</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="mathWrong">
+  <div class="top">
+    <a class="back" id="back-link" href="06-alarm-ringing.html" aria-label="Back">&lsaquo;</a>
+    <h1>Math challenge</h1>
+  </div>
+  <p class="subtitle error"><b>Wrong answer - the alarm is still ringing</b></p>
+
+  <div class="box box-orange">
+    <p class="question" id="question">...</p>
+    <p>Enter the correct answer</p>
+  </div>
+
+  <p class="box box-red" id="wrong-message" role="alert">X Incorrect! Try again.</p>
+
+  <form id="math-form" novalidate>
+    <div class="answer-row">
+      <input class="answer answer-wrong" id="answer" type="text" inputmode="numeric" autocomplete="off" placeholder="?" aria-label="Your answer">
+      <button class="clear" id="clear-button" type="button" aria-label="Clear">X</button>
+    </div>
+    <div class="keypad" id="keypad">
+      <button type="button" data-key="1">1</button>
+      <button type="button" data-key="2">2</button>
+      <button type="button" data-key="3">3</button>
+      <button type="button" data-key="4">4</button>
+      <button type="button" data-key="5">5</button>
+      <button type="button" data-key="6">6</button>
+      <button type="button" data-key="7">7</button>
+      <button type="button" data-key="8">8</button>
+      <button type="button" data-key="9">9</button>
+      <button type="button" class="key-muted" data-key="clear" aria-label="Clear">C</button>
+      <button type="button" data-key="0">0</button>
+      <button type="button" class="key-muted" data-key="back" aria-label="Delete last digit">&larr;</button>
+    </div>
+    <p class="box box-red hidden" id="form-error" role="alert"></p>
+    <button class="btn" type="submit">Try again</button>
+  </form>
+
+  <script src="scripts/api.js"></script>
+  <script src="scripts/common.js"></script>
+  <script src="scripts/app.js"></script>
+</body>
+</html>

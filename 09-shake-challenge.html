@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Alarm G7">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="theme-color" content="#4765D9">
+  <link rel="apple-touch-icon" href="pwa/apple-touch-icon.png">
+  <link rel="manifest" href="pwa/manifest.json">
+  <title>09 Shake Challenge</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="shakeChallenge">
+  <div class="top">
+    <a class="back" id="back-link" href="06-alarm-ringing.html" aria-label="Back">&lsaquo;</a>
+    <h1>Shake phone</h1>
+  </div>
+  <p class="subtitle">Keep shaking until the target is met</p>
+
+  <div class="center">
+    <button class="circle circle-orange shake-button" id="shake-phone" type="button" aria-label="Count one shake">
+      <span class="shake-phone">&harr;</span>
+    </button>
+
+    <p class="label">Shakes completed</p>
+    <p class="huge" id="shake-count">0 / 20</p>
+    <progress id="shake-progress" value="0" max="20"></progress>
+    <p class="orange"><b id="shake-percent">0% complete</b></p>
+    <p class="light" id="shake-hint">No motion sensor? Tap the phone to count a shake.</p>
+    <button class="btn hidden" id="motion-button" type="button">Allow the motion sensor</button>
+    <p class="box box-red hidden" id="form-error" role="alert"></p>
+  </div>
+
+  <!-- when the count reaches 20 the app goes to screen 12 -->
+  <p class="box box-orange">Complete 20 shakes to dismiss the alarm</p>
+
+  <script src="scripts/api.js"></script>
+  <script src="scripts/common.js"></script>
+  <script src="scripts/app.js"></script>
+</body>
+</html>

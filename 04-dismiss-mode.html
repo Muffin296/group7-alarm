@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Alarm G7">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="theme-color" content="#4765D9">
+  <link rel="apple-touch-icon" href="pwa/apple-touch-icon.png">
+  <link rel="manifest" href="pwa/manifest.json">
+  <title>04 Dismiss Mode</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="dismissMode">
+  <div class="top">
+    <a class="back" id="back-link" href="02-alarm-editor.html" aria-label="Back">&lsaquo;</a>
+    <h1>Dismiss mode</h1>
+  </div>
+  <p class="subtitle">Set how the alarm can be stopped</p>
+
+  <form id="mode-form">
+    <!-- filled by app.js with GET /dismiss_mode -->
+    <div id="mode-list">
+      <p class="muted empty">Loading modes...</p>
+    </div>
+
+    <p class="box box-red hidden" id="form-error" role="alert"></p>
+
+    <button class="btn" type="submit">Continue</button>
+  </form>
+
+  <script src="scripts/api.js"></script>
+  <script src="scripts/common.js"></script>
+  <script src="scripts/app.js"></script>
+</body>
+</html>

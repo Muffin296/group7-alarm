@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Alarm G7">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="theme-color" content="#4765D9">
+  <link rel="apple-touch-icon" href="pwa/apple-touch-icon.png">
+  <link rel="manifest" href="pwa/manifest.json">
+  <title>01 Alarm List</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="alarmList">
+  <div class="top">
+    <h1>Alarms</h1>
+    <a class="add" href="02-alarm-editor.html" aria-label="Add alarm">+</a>
+  </div>
+  <p class="subtitle">Your scheduled wake-up times</p>
+
+  <p class="label">Active alarms</p>
+  <!-- filled by app.js with GET /alarm -->
+  <div id="alarm-list">
+    <p class="muted empty">Loading alarms...</p>
+  </div>
+
+  <div class="box box-blue">
+    <p class="label">Next alarm</p>
+    <p><b id="next-alarm">-</b></p>
+    <a class="small-link hidden" id="test-ring" href="06-alarm-ringing.html">Test ring now &rsaquo;</a>
+  </div>
+
+  <nav class="tabbar">
+    <a class="active" href="01-alarm-list.html">Alarms</a>
+  </nav>
+
+  <script src="scripts/api.js"></script>
+  <script src="scripts/common.js"></script>
+  <script src="scripts/app.js"></script>
+</body>
+</html>

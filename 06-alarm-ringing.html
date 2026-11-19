@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Alarm G7">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="theme-color" content="#4765D9">
+  <link rel="apple-touch-icon" href="pwa/apple-touch-icon.png">
+  <link rel="manifest" href="pwa/manifest.json">
+  <title>06 Alarm Ringing</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="alarmRinging">
+  <h1>Alarm ringing</h1>
+
+  <div class="center">
+    <div class="circle circle-blue ringing">&#9719;</div>
+    <p class="huge" id="ring-time">--:--</p>
+    <p class="ampm" id="ring-period"></p>
+    <h2 id="ring-label"></h2>
+    <p class="muted" id="ring-sound"></p>
+
+    <div class="box box-blue">
+      <p class="muted">Selected dismissal mode:</p>
+      <p><b id="ring-mode"></b></p>
+    </div>
+  </div>
+
+  <form id="ring-form">
+    <button class="btn" id="start-button" type="submit">Start wake-up challenge</button>
+  </form>
+
+  <script src="scripts/api.js"></script>
+  <script src="scripts/common.js"></script>
+  <script src="scripts/app.js"></script>
+</body>
+</html>
