@@ -1,0 +1,17 @@
+{
+  "name": "Group 7 Alarm Clock",
+  "short_name": "Alarm G7",
+  "description": "Group 7 alarm clock prototype: alarms, ringtones and wake-up challenges.",
+  "start_url": "../01-alarm-list.html",
+  "scope": "../",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#FFFFFF",
+  "theme_color": "#4765D9",
+  "icons": [
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icon-512-maskable.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" },
+    { "src": "apple-touch-icon.png", "sizes": "180x180", "type": "image/png" }
+  ]
+}
